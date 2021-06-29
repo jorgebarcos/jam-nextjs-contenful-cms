@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const RecipeCard = ({ recipe }) => {
 
@@ -9,7 +10,11 @@ const RecipeCard = ({ recipe }) => {
     return (
         <div className="card">
             <div className="featured">
-                {/* image */}
+                <Image
+                    src={`https:${thumbnail.fields.file.url}`}
+                    width={thumbnail.fields.file.details.image.width}
+                    height={thumbnail.fields.file.details.image.height}
+                />
             </div>
             <div className="content">
                 <div className="info">
